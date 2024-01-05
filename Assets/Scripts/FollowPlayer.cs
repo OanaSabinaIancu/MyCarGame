@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-    //reference to the player object
+    //reference the car object 
     public GameObject player;
     private Vector3 offset = new Vector3(0, 5, -7);
 
@@ -15,9 +15,9 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        //offset the camera behind the vehicle for following it (by adding the player's position)
-        transform.position = player.transform.position + offset; //(0, 5, -7) are the initial coordinates for the camera
+        //offset behind the player by adding the player's coordinate
+        transform.position = player.transform.position + offset;
     }
 }
